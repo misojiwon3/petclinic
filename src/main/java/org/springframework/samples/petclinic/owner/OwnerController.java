@@ -60,10 +60,10 @@ class OwnerController {
     }
 
 
-    @Autowired
-    public void setOwners(OwnerRepository owners) {
-        this.owners = owners;
-    }
+//    @Autowired
+//    public void setOwners(OwnerRepository owners) {
+//        this.owners = owners;
+//    }
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
