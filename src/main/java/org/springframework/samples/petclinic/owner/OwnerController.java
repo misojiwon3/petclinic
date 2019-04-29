@@ -41,10 +41,28 @@ class OwnerController {
 
     private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
     private final OwnerRepository owners;
+    private final PetRepository petRepository;
 
+//    public OwnerController(OwnerRepository clinicService) {
+//        this.owners = clinicService;
+//    }
 
-    public OwnerController(OwnerRepository clinicService) {
+//    @Autowired // 생략 가능
+//    private OwnerRepository owners;
+
+//    public OwnerController(OwnerRepository clinicService) {
+//        this.owners = clinicService;
+//    }
+
+    public OwnerController(OwnerRepository clinicService, PetRepository petRepository) {
         this.owners = clinicService;
+        this.petRepository = petRepository;
+    }
+
+
+    @Autowired
+    public void setOwners(OwnerRepository owners) {
+        this.owners = owners;
     }
 
     @InitBinder
